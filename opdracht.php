@@ -28,6 +28,19 @@
 
     // je code hier...
 
+    $servername = "localhost";
+    $username = "cyber";
+    $password = "";
+    $dbname = "opdracht_cyber";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    $stmt = $conn->prepare("INSERT INTO message (message) VALUES (?)");
+    $stmt->bind_param('s', $userMessage);
+    
+    $stmt->execute();
+
+
 ?>
 
     <hr>
